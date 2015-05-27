@@ -1,21 +1,22 @@
 module RedisRds
 	class Object
 		attr_accessor :redis_key
-		
+
 		def initialize(redis_key)
 			@redis_key = format_redis_key(redis_key)
 		end
 
 		@@namespace = nil
 		@@connection = nil
-		def self.configure(options)
-			@@namespace = options[:namespace]
-			@@connection = options[:connection]
-		end
+    def self.configure(options)
+    	@@namespace = options[:namespace]
+      @@connection = options[:connection]
+    end
 
 		def connection
 			return @@connection
 		end
+		private :connection
 
 		def namespace
 			return @@namespace
