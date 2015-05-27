@@ -1,12 +1,11 @@
 module RedisRds
   class Mutex < RedisRds::String
-    REDIS_NS = "#{namespace}:mutex"
     DEFAULT_EXPIRY = 60.seconds
 
     attr_reader :id, :expiry
 
     def initialize(id, expiry = DEFAULT_EXPIRY, owner = '')
-      super("#{REDIS_NS}:#{id}")
+      super("#{namespace}:mutex:#{id}")
 
       @id = id
       @expiry = expiry

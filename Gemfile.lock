@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     redis_rds (0.0.1)
-      rails (~> 4.1.5)
+      rails (~> 4.1.1)
 
 GEM
   remote: https://rubygems.org/

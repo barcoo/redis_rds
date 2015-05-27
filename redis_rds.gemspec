@@ -7,17 +7,16 @@ require "redis_rds/version"
 Gem::Specification.new do |s|
   s.name        = "redis_rds"
   s.version     = RedisRds::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RedisRds."
-  s.description = "TODO: Description of RedisRds."
+  s.authors     = ["Checkitmobile GmbH"]
+  s.email       = ["support@barcoo.com"]
+  s.homepage    = "http://www.barcoo.com"
+  s.summary     = "Summary of RedisRds."
+  s.description = "Description of RedisRds."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.1.5"
-
+  s.add_dependency "rails", "~> 4.1.1"
   s.add_development_dependency "sqlite3"
 end
