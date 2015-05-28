@@ -16,6 +16,10 @@ module RedisRds
 		def self.connection
 			return @@connection
 		end
+		
+		def connection
+			return @@connection
+		end		
 
 		def namespace
 			return @@namespace
