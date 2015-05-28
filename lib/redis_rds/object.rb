@@ -13,12 +13,11 @@ module RedisRds
       @@connection = options[:connection]
     end
 
-		def connection
+		def self.connection
 			return @@connection
 		end
-		private :connection
 
-		def namespace
+		def self.namespace
 			return @@namespace
 		end
 
