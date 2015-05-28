@@ -17,7 +17,7 @@ module RedisRds
 			return @@connection
 		end
 
-		def self.namespace
+		def namespace
 			return @@namespace
 		end
 
