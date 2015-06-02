@@ -6,6 +6,10 @@ module RedisRds
 			@redis_key = format_redis_key(redis_key)
 		end
 
+		def self.flushdb
+			connection.flushdb
+		end
+
 		@@namespace = nil
 		@@connection = nil
     def self.configure(options)
