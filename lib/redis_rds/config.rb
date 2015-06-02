@@ -26,7 +26,7 @@ module RedisRds
       connection = Redis.new(config)
     end
 
-    RedisRds::Object.configure({connection: opts[:connection], namespace: opts[:namespace]})
+    RedisRds::Object.configure({connection: connection, namespace: opts[:namespace]})
   end
 
   # Configure through yaml file
