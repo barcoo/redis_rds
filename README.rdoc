@@ -1,3 +1,8 @@
 = RedisRds
 
-This project rocks and uses MIT-LICENSE.
+Add description and examples
+
+= Roadmap
+
+1. Add to RubyGems
+2. Add description and examples
