@@ -20,8 +20,13 @@ module RedisRds
     opts.each {|k,v| @config[k.to_sym] = v if @valid_config_keys.include? k.to_sym}
 
     if opts[:connection].present?
-      RedisRds::Object.configure({connection: opts[:connection], namespace: opts[:namespace]})
+      connection = opts[:connection]
+    else
+      config[:db] = config[:db].to_i
+      connection = Redis.new(config)
     end
+
+    RedisRds::Object.configure({connection: opts[:connection], namespace: opts[:namespace]})
   end
 
   # Configure through yaml file

@@ -48,4 +48,4 @@ class RedisSingleton
   end
 end
 
-RedisRds::Object.configure({connection: RedisSingleton.get_instance, namespace: REDIS_NS})
+RedisRds.configure({connection: RedisSingleton.get_instance, namespace: REDIS_NS})
