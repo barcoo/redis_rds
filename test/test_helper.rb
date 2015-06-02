@@ -29,7 +29,7 @@ class RedisSingleton
   @@instance = nil
 
   def initialize
-    redis_server = {:host=>"localhost", :db=>1, :port=>6379, :timeout=>30, :thread_safe=>true}
+    redis_server = RedisRds::config
     redis_server[:db] = "#{redis_server[:db]}".to_i
     @@instance = Redis.new(redis_server)
   end

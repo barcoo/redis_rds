@@ -1,3 +1,4 @@
+require 'redis_rds/config'
 require 'redis_rds/composite'
 require 'redis_rds/object'
 require 'redis_rds/string'
