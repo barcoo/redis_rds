@@ -6,3 +6,4 @@ Add description and examples
 
 1. Add to RubyGems
 2. Add description and examples
+3. Improve lib configuration
