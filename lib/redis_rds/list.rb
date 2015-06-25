@@ -1,5 +1,6 @@
 module RedisRds
   class List < RedisRds::Object
+    include Enumerable
 
     def size
       return connection.llen(@redis_key)
@@ -34,6 +35,16 @@ module RedisRds
       result = [] if result.blank?
 
       return result
+    end
+
+    def each(&block)
+      return get(0).each(&block)
+    end
+
+    def clear
+      # if start > end redis clears the list
+      # http://redis.io/commands/ltrim
+      return connection.ltrim(@redis_key, 1, 0)
     end
   end
 end

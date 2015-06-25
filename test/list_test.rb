@@ -62,5 +62,13 @@ module RedisRds
       assert_equal members, @list.lpop(members.size, true)
       assert @list.empty?
     end
+
+    def test_clear
+      members = ['a', 'b', 'c', 'd', 'a']
+      @list.rpush(members)
+      assert_equal members, @list.get(0)
+      @list.clear()
+      assert_equal [], @list.get(0)
+    end
   end
 end
