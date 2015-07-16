@@ -28,6 +28,10 @@ module RedisRds
       return connection.zrem(@redis_key, item)
     end
 
+    def remove_by_score(min, max)
+      return connection.zremrangebyscore(@redis_key, min, max)
+    end
+
     def range(min, max)
       return connection.zrange(@redis_key, min, max)
     end
