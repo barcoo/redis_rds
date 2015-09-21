@@ -3,15 +3,15 @@ module RedisRds
     SEPARATOR = ':'
 
     def setnx(*keys, value)
-      return super(format_keys(keys), value)
+      return super(format_key(keys), value)
     end
 
     def incrby(*keys, increment)
-      return super(format_keys(keys), increment)
+      return super(format_key(keys), increment)
     end
 
     def key?(key)
-      return super(format_keys(keys))
+      return super(format_key(keys))
     end
 
     def get(*keys)
@@ -23,7 +23,7 @@ module RedisRds
     end
 
     def setex(*keys, value, expiry)
-      super(format_keys(keys), value, expiry)
+      super(format_key(keys), value, expiry)
     end
 
     def remove(*keys)
