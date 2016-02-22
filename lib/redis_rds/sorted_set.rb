@@ -32,8 +32,13 @@ module RedisRds
       return connection.zremrangebyscore(@redis_key, min, max)
     end
 
-    def range(min, max)
-      return connection.zrange(@redis_key, min, max)
+    def range(min, max, order: :asc)
+      case order
+      when :desc
+        connection.zrevrange(@redis_key, min, max)
+      else
+        connection.zrange(@redis_key, min, max)
+      end
     end
 
     def index_of(item)

@@ -33,6 +33,16 @@ module RedisRds
       assert_equal ['a', 'e'], @set.all
     end
 
+    def test_range
+      @set.add(1, '1')
+      @set.add(2, '2')
+      @set.add(3, '3')
 
+      asc = @set.range(0, 2)
+      desc = @set.range(0, 2, order: :desc)
+
+      assert_equal ['1', '2', '3'], asc
+      assert_equal ['3', '2', '1'], desc
+    end
   end
 end
