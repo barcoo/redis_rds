@@ -1,4 +1,5 @@
 require 'yaml'
+require 'redis'
 
 module RedisRds
   # Configuration defaults
