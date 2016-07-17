@@ -10,7 +10,7 @@ module RedisRds
       index = size
       return add(index, item)
     end
-    alias_method :<<, :push
+    alias << push
 
     def all
       return connection.zrange(@redis_key, 0, -1).to_a

@@ -1,9 +1,0 @@
-= RedisRds
-
-Add description and examples
-
-= Roadmap
-
-1. Add to RubyGems
-2. Add description and examples
-3. Improve lib configuration

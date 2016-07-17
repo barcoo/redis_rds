@@ -5,19 +5,19 @@ module RedisRds
     def get(key)
       return connection.hget(@redis_key, key)
     end
-    alias_method :[], :get
+    alias [] get
 
     def set(key, value)
       return connection.hset(@redis_key, key, value)
     end
-    alias_method :[]=, :set
+    alias []= set
 
     def mset(*args)
       return connection.hmset(@redis_key, *args)
     end
 
-    def mget(*args)
-      return connection.hmget(@redis_key,*arg)
+    def mget(*_args)
+      return connection.hmget(@redis_key, *arg)
     end
 
     def setnx(key, value)

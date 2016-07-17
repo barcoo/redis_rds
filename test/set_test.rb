@@ -2,7 +2,6 @@ require 'test_helper'
 
 module RedisRds
   class SetTest < ActiveSupport::TestCase
-
     def setup
       super
       RedisSingleton.clear_test_db
@@ -23,7 +22,7 @@ module RedisRds
     end
 
     def test_all
-      members = ['a', 'b', 'c', 'd', 'a']
+      members = %w(a b c d a)
       members.each { |m| @set.add(m) }
 
       all = @set.all
@@ -31,20 +30,20 @@ module RedisRds
     end
 
     def test_size
-      members = ['a', 'b', 'c', 'd', 'a']
+      members = %w(a b c d a)
       members.each { |m| @set.add(m) }
 
       assert_equal ::Set.new(members).size, @set.size
     end
 
     def test_merge
-      members = ['a', 'b', 'c', 'd', 'a' ]
+      members = %w(a b c d a)
       @set.merge(members)
       assert_equal ::Set.new(members), ::Set.new(@set.all)
     end
 
     def test_consume
-      members = ['a', 'b', 'c', 'd', 'a']
+      members = %w(a b c d a)
       assert_equal 4, @set.merge(members)
       assert_equal ::Set.new(members).size, @set.size
 
@@ -55,7 +54,7 @@ module RedisRds
     end
 
     def test_to_json
-      members = ['a', 'b', 'c', 'd', 'a']
+      members = %w(a b c d a)
       members.each { |m| @set.add(m) }
 
       assert_equal ::Set.new(members).to_a.sort.to_json, JSON.parse(@set.to_json).sort.to_json

@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Declare your gem's dependencies in redis_rds.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -10,7 +10,19 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'byebug', :group => [:development, :test]
+group :development do
+  gem 'puma' # development webserver
+end
 
-# To use debugger
-# gem 'debugger'
+group :development, :test do
+  gem 'byebug' # debugger
+  gem 'pry-byebug' # pry integration for byebug
+  gem 'pry-stack_explorer' # stack exploration
+end
+
+group :test do
+  gem 'minitest-reporters', '~> 1.1.9', require: false
+  gem 'simplecov', '~> 0.11.2', require: false
+  gem 'simplecov-cobertura', '~> 1.1.0', require: false
+  gem 'simplecov-formatter-shield', '~> 0.0.3', require: false
+end
