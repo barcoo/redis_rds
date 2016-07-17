@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = RedisRds::VERSION
   s.authors     = ['Checkitmobile GmbH']
   s.email       = ['support@barcoo.com']
-  s.homepage    = 'http://www.barcoo.com'
-  s.summary     = 'Summary of RedisRds.'
-  s.description = 'Description of RedisRds.'
+  s.homepage    = 'https://www.barcoo.com'
+  s.summary     = 'Ruby data structures stored in Redis.'
+  s.description = 'RedisRds provides Ruby interfaces for data structures like String or Hash stored in Redis.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
