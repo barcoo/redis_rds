@@ -1,0 +1,23 @@
+{
+  "folders":
+  [
+    {
+      "path": ".",
+      "folder_exclude_patterns": ["log", "tmp"],
+      "file_exclude_patterns": [".rubocop-*"]
+    }
+  ],
+  "settings":
+  {
+    "translate_tabs_to_spaces": true
+  },
+  "SublimeLinter": {
+    "linters": {
+      "rubocop": {
+        "@disable": false,
+        "args": ["--config", "${project}/.rubocop.yml"],
+        "excludes": []
+      }
+    }
+  }
+}
