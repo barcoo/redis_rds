@@ -10,7 +10,12 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'byebug', group: [:development, :test]
+group :development do
+  gem 'puma' # development webserver
+end
 
-# To use debugger
-# gem 'debugger'
+group :development, :test do
+  gem 'byebug' # debugger
+  gem 'pry-byebug' # pry integration for byebug
+  gem 'pry-stack_explorer' # stack exploration
+end
