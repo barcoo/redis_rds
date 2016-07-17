@@ -11,3 +11,4 @@ test/dummy/.sass-cache
 .gemtags
 .tags_sorted_by_file
 .rubocop-*
+Gemfile.lock
