@@ -7,7 +7,7 @@ module RedisRds
     end
 
     def empty?
-      return self.size == 0
+      return self.size == 0 # rubocop:disable Style/ZeroLengthPredicate
     end
 
     def get(start, stop = -1)
