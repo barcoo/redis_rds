@@ -7,7 +7,7 @@ module RedisRds
     end
 
     def empty?
-      return self.empty?
+      return self.size == 0
     end
 
     def get(start, stop = -1)
