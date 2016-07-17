@@ -13,3 +13,5 @@ test/dummy/.sass-cache
 .rubocop-*
 Gemfile.lock
 redis_rds.sublime-workspace
+
+TODO.txt
