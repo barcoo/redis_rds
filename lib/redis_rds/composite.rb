@@ -3,8 +3,7 @@ module RedisRds
     extend Forwardable
 
     attr_reader :members
-    def_delegators :@members, :[], :[]=, :assoc, :size, :empty?,
-      :each, :include?, :length, :merge
+    def_delegators :@members, :[], :[]=, :assoc, :size, :empty?, :each, :include?, :length, :merge
 
     def initialize(key)
       @key = key
