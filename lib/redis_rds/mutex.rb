@@ -13,9 +13,7 @@ module RedisRds
     end
 
     def lock
-      connection.set(@redis_key, @owner, ex: @expiry,
-                                         nx: true)
-
+      connection.set(@redis_key, @owner, ex: @expiry, nx: true)
       return locked?
     end
 
