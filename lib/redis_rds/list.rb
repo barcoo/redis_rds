@@ -7,7 +7,7 @@ module RedisRds
     end
 
     def empty?
-      return self.size == 0
+      return self.empty?
     end
 
     def get(start, stop = -1)
@@ -22,15 +22,15 @@ module RedisRds
       return connection.lpush(@redis_key, Array.wrap(elems))
     end
 
-    def lpop(length = 1, force=false)
-      lua_script = %q(
+    def lpop(length = 1, force = false)
+      lua_script = "
         local length = tonumber(ARGV[1]);
         if (ARGV[2] ~= 'true' or redis.call('llen', KEYS[1])>=length) then
           local result = redis.call('lrange', KEYS[1], 0, length - 1);
           redis.call('ltrim', KEYS[1], length, - 1);
           return result
         else return ''
-        end)
+        end"
       result = connection.eval(lua_script, [@redis_key], [length, force])
       result = [] if result.blank?
 

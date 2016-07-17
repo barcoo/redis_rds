@@ -1,6 +1,6 @@
 module RedisRds
   class NestedHash < RedisRds::Hash
-    SEPARATOR = ':'
+    SEPARATOR = ':'.freeze
 
     def setnx(*keys, value)
       return super(format_key(keys), value)
@@ -10,7 +10,7 @@ module RedisRds
       return super(format_key(keys), increment)
     end
 
-    def key?(key)
+    def key?(_key)
       return super(format_key(keys))
     end
 

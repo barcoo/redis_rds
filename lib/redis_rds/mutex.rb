@@ -9,14 +9,12 @@ module RedisRds
 
       @id = id
       @expiry = expiry
-      @owner = (owner.blank?) ? generate_owner : owner
+      @owner = owner.blank? ? generate_owner : owner
     end
 
     def lock
-      connection.set(@redis_key, @owner, {
-        ex: @expiry,
-        nx: true
-      })
+      connection.set(@redis_key, @owner, ex: @expiry,
+                                         nx: true)
 
       return locked?
     end
@@ -24,7 +22,7 @@ module RedisRds
     def locked?
       return connection.get(@redis_key) == @owner
     end
-    alias_method :owned?, :locked?
+    alias owned? locked?
 
     def release
       self.delete if owned?
@@ -34,7 +32,7 @@ module RedisRds
       [@id, @expiry, @owner]
     end
 
-    def synchronize &block
+    def synchronize
       if self.lock
         begin
           yield if block_given?

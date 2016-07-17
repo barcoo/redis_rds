@@ -1,8 +1,8 @@
 # Configure Rails Environment
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
+require File.expand_path('../dummy/config/environment.rb', __FILE__)
+require 'rails/test_help'
 
 Rails.backtrace_cleaner.remove_silencers!
 
@@ -11,26 +11,26 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 # Load fixtures from the engine
 if ActiveSupport::TestCase.method_defined?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
+  ActiveSupport::TestCase.fixture_path = File.expand_path('../fixtures', __FILE__)
 end
 
-def assert_present data
+def assert_present(data)
   assert data.present?
 end
 
-def assert_blank data
+def assert_blank(data)
   assert data.blank?
 end
 
-REDIS_NS = "testns"
+REDIS_NS = 'testns'.freeze
 
 class RedisSingleton
-  require "redis"
+  require 'redis'
   @@instance = nil
 
   def initialize
-    redis_server = RedisRds::config
-    redis_server[:db] = "#{redis_server[:db]}".to_i
+    redis_server = RedisRds.config
+    redis_server[:db] = (redis_server[:db]).to_s.to_i
     @@instance = Redis.new(redis_server)
   end
 
@@ -41,11 +41,9 @@ class RedisSingleton
 
   def self.clear_test_db
     # Clear test keys from Redis before running tests
-    redis = get_instance()
-    if Rails.env.test?
-      redis.flushdb
-    end
+    redis = get_instance
+    redis.flushdb if Rails.env.test?
   end
 end
 
-RedisRds.configure({connection: RedisSingleton.get_instance, namespace: REDIS_NS})
+RedisRds.configure(connection: RedisSingleton.get_instance, namespace: REDIS_NS)

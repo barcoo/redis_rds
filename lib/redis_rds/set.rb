@@ -5,16 +5,16 @@ module RedisRds
     def add(item)
       return connection.sadd(@redis_key, item)
     end
-    alias_method :<<, :add
-    alias_method :push, :add
+    alias << add
+    alias push add
 
     def merge(enumerable)
-      lua_script = %q(
+      lua_script = "
         local result = 0;
         for i, item in ipairs(ARGV) do
           result = result + redis.call('sadd', KEYS[1], item);
         end
-        return result;)
+        return result;"
       result = connection.eval(lua_script, [@redis_key], enumerable.entries)
       result = [] if result.blank?
 
@@ -30,10 +30,10 @@ module RedisRds
     end
 
     def consume
-      lua_script = %q(
+      lua_script = "
         local result = redis.call('smembers', KEYS[1]);
         redis.call('del', KEYS[1]);
-        return result;)
+        return result;"
       result = connection.eval(lua_script, [@redis_key])
       result = [] if result.blank?
 

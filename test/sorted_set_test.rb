@@ -2,7 +2,6 @@ require 'test_helper'
 
 module RedisRds
   class SortedSetTest < ActiveSupport::TestCase
-
     def setup
       super
       RedisSingleton.clear_test_db
@@ -13,13 +12,13 @@ module RedisRds
     def test_push
       @set.push('a')
       @set.push('b')
-      assert_equal ['a', 'b'], @set.all
+      assert_equal %w(a b), @set.all
     end
 
     def test_add
       @set.add(2, 'b')
       @set.add(1, 'a')
-      assert_equal ['a', 'b'], @set.all
+      assert_equal %w(a b), @set.all
     end
 
     def test_remove_by_score
@@ -29,8 +28,8 @@ module RedisRds
       @set.add(2, 'b')
       @set.add(1, 'a')
       assert_equal 5, @set.size
-      assert_equal 3, @set.remove_by_score(2,4)
-      assert_equal ['a', 'e'], @set.all
+      assert_equal 3, @set.remove_by_score(2, 4)
+      assert_equal %w(a e), @set.all
     end
 
     def test_range
@@ -41,8 +40,8 @@ module RedisRds
       asc = @set.range(0, 2)
       desc = @set.range(0, 2, order: :desc)
 
-      assert_equal ['1', '2', '3'], asc
-      assert_equal ['3', '2', '1'], desc
+      assert_equal %w(1 2 3), asc
+      assert_equal %w(3 2 1), desc
     end
   end
 end
