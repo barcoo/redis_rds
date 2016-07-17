@@ -1,5 +1,7 @@
 # RedisRds
 
+[![GitHub release](https://img.shields.io/badge/release-0.0.1-blue.png)](https://github.com/barcoo/redis_rds/releases/tag/0.0.1)
+
 TODO: Add description and installation instructions.
 
 ## Roadmap
