@@ -42,9 +42,9 @@ namespace :cim do
   desc 'Fails if the current repository is not clean'
   task :assert_clean_repo do
     status = `git status -s`.chomp.strip
-    if status.blank?
+    if status.empty?
       status = `git log origin/master..HEAD`.chomp.strip # check if we have unpushed commits
-      if status.blank?
+      if status.empty?
         puts ">>> Repository is clean!"
       else
         puts ">>> Please push your committed changes before releasing!"
