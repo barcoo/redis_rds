@@ -30,21 +30,6 @@ module RedisRds
     RedisRds::Object.configure(connection: connection, namespace: opts[:namespace])
   end
 
-  # Configure through yaml file
-  def self.configure_with(path_to_yaml_file)
-    begin
-      config = YAML.load(IO.read(path_to_yaml_file))
-    rescue Errno::ENOENT
-      Rails.logger.warn('YAML configuration file not found. Using defaults.')
-      return
-    rescue Psych::SyntaxError
-      Rails.logger.warn('YAML configuration file contains invalid syntax. Using defaults.')
-      return
-    end
-
-    configure(config)
-  end
-
   def self.config
     @config
   end
