@@ -76,7 +76,7 @@ namespace :cim do
   desc 'Updates README with latest version'
   task :update_readme do
     puts '>>> Updating README.md'
-    replace = %([![GitHub release](https://img.shields.io/badge/release-#{RedisRds::VERSION}-blue.png)](https://github.com/barcoo/RedisRds/releases/tag/#{RedisRds::VERSION}))
+    replace = %([![GitHub release](https://img.shields.io/badge/release-#{RedisRds::VERSION}-blue.png)](https://github.com/barcoo/redis_rds/releases/tag/#{RedisRds::VERSION}))
 
     `sed -i -u 's@^\\[\\!\\[GitHub release\\].*$@#{replace}@' README.md`
   end
