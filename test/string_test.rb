@@ -4,7 +4,6 @@ module RedisRds
   class StringTest < ActiveSupport::TestCase
     def setup
       super
-      RedisSingleton.clear_test_db
       @test_key = 'test'
       @string = RedisRds::String.new(@test_key)
     end

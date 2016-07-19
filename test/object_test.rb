@@ -4,7 +4,6 @@ module RedisRds
   class ObjectTest < ActiveSupport::TestCase
     def setup
       super
-      RedisSingleton.clear_test_db
       @test_key = 'testkey'
       @object = RedisRds::Object.new(@test_key)
     end

@@ -2,11 +2,6 @@ require 'test_helper'
 
 module RedisRds
   class MutexTest < ActiveSupport::TestCase
-    def setup
-      super
-      RedisSingleton.clear_test_db
-    end
-
     def test_mutex_concurrency
       mutex_1 = RedisRds::Mutex.new('test')
       mutex_2 = RedisRds::Mutex.new('test')

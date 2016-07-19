@@ -4,7 +4,6 @@ module RedisRds
   class ExpirableHashTest < ActiveSupport::TestCase
     def setup
       super
-      RedisSingleton.clear_test_db
       @test_key = 'test'
       @hash = RedisRds::ExpirableHash.new(@test_key)
     end

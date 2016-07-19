@@ -4,7 +4,6 @@ module RedisRds
   class SetTest < ActiveSupport::TestCase
     def setup
       super
-      RedisSingleton.clear_test_db
       @test_key = 'test'
       @set = RedisRds::Set.new(@test_key)
     end

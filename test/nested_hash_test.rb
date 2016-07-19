@@ -2,11 +2,6 @@ require 'test_helper'
 
 module RedisRds
   class NestedHashTest < ActiveSupport::TestCase
-    def setup
-      super
-      RedisSingleton.clear_test_db
-    end
-
     def test_set
       h = RedisRds::NestedHash.new('test')
       h.set('k1', 'k2', 'k3', 'value')

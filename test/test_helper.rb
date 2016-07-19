@@ -42,3 +42,12 @@ class RedisSingleton
 end
 
 RedisRds.configure(connection: RedisSingleton.get_instance, namespace: REDIS_NS)
+
+module ActiveSupport
+  class TestCase
+    def setup
+      super
+      RedisSingleton.clear_test_db
+    end
+  end
+end

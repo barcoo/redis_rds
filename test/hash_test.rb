@@ -4,7 +4,6 @@ module RedisRds
   class HashTest < ActiveSupport::TestCase
     def setup
       super
-      RedisSingleton.clear_test_db
       @test_key = 'test'
       @hash = RedisRds::Hash.new(@test_key)
     end
