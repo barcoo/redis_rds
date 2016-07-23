@@ -1,18 +1,14 @@
-.bundle/
-log/*.log
-pkg/
-test/dummy/db/*.sqlite3
-test/dummy/db/*.sqlite3-journal
-test/dummy/log/*.log
-test/dummy/tmp/
-test/dummy/.sass-cache
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/pkg/
+/spec/reports/
+/tmp/
 
-.tags
-.gemtags
-.tags_sorted_by_file
+.DS_Store
 .rubocop-*
 Gemfile.lock
 redis_rds.sublime-workspace
 README.md-u
-
-TODO.txt

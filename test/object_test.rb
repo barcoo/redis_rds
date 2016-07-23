@@ -9,7 +9,7 @@ module RedisRds
     end
 
     def test_initialize
-      assert @object.redis_key.starts_with?(REDIS_NS)
+      assert @object.redis_key.start_with?(REDIS_NS)
       assert !!(@object.redis_key =~ /^.+#{@test_key}.*$/)
     end
 

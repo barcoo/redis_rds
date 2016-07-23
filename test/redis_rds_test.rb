@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class RedisRdsTest < ActiveSupport::TestCase
-  test 'truth' do
-    assert_kind_of Module, RedisRds
+  def test_that_it_has_a_version_number
+    refute_nil ::RedisRds::VERSION
   end
 end

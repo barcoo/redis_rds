@@ -1,13 +1,7 @@
-# Configure Rails Environment
-ENV['RAILS_ENV'] = 'test'
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'redis_rds'
 
-require File.expand_path('../dummy/config/environment.rb', __FILE__)
-require 'rails/test_help'
-
-Rails.backtrace_cleaner.remove_silencers!
-
-# Load support files
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+require 'minitest/autorun'
 
 def assert_present(data)
   assert data.present?
@@ -37,7 +31,7 @@ class RedisSingleton
   def self.clear_test_db
     # Clear test keys from Redis before running tests
     redis = get_instance
-    redis.flushdb if Rails.env.test?
+    redis.flushdb
   end
 end
 

@@ -66,7 +66,7 @@ module RedisRds
     end
 
     def format_redis_key(key)
-      key = "#{namespace}:#{key}" unless key.starts_with?(namespace)
+      key = "#{namespace}:#{key}" unless key.start_with?(namespace)
       return key
     end
     private :format_redis_key

@@ -1,3 +1,7 @@
+require 'active_support/all'
+
+require 'redis_rds/version'
+
 require 'redis_rds/config'
 require 'redis_rds/composite'
 require 'redis_rds/object'

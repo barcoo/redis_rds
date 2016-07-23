@@ -1,28 +1,10 @@
-begin
-  require 'bundler/setup'
-rescue LoadError
-  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
-end
-
-require 'rdoc/task'
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = 'RedisRds'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
-Bundler::GemHelper.install_tasks
-
+require 'bundler/gem_tasks'
 require 'rake/testtask'
 
 Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
   t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+  t.libs << 'lib'
+  t.test_files = FileList['test/**/*_test.rb']
 end
 
 task default: :test
@@ -45,13 +27,13 @@ namespace :cim do
     if status.empty?
       status = `git log origin/master..HEAD`.chomp.strip # check if we have unpushed commits
       if status.empty?
-        puts ">>> Repository is clean!"
+        puts '>>> Repository is clean!'
       else
-        puts ">>> Please push your committed changes before releasing!"
+        puts '>>> Please push your committed changes before releasing!'
         exit -1
       end
     else
-      puts ">>> Please stash or commit your changes before releasing!"
+      puts '>>> Please stash or commit your changes before releasing!'
       exit -1
     end
   end
@@ -110,7 +92,7 @@ namespace :cim do
   desc 'Creates and pushes the tag to git'
   task :tag do
     puts '>>> Tagging'
-    message = STDOUT.print ">>> Please enter a tag message: "
+    message = STDOUT.print '>>> Please enter a tag message: '
     input = STDIN.gets.strip.tr("'", "\'")
     `git tag -a '#{RedisRds::VERSION}' -m '#{input}'`
   end
