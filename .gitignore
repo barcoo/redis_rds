@@ -7,8 +7,12 @@
 /spec/reports/
 /tmp/
 
+# ignore vim tmp and swap files
+*~
+*.swp
+*.swo
+
 .DS_Store
 .rubocop-*
-Gemfile.lock
 redis_rds.sublime-workspace
 README.md-u
