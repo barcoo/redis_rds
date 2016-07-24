@@ -39,6 +39,7 @@ RedisRds.configure(connection: RedisSingleton.get_instance, namespace: REDIS_NS)
 
 module ActiveSupport
   class TestCase
+    self.test_order = :random
     def setup
       super
       RedisSingleton.clear_test_db
