@@ -42,5 +42,25 @@ module RedisRds
       assert_equal %w(1 2 3), asc
       assert_equal %w(3 2 1), desc
     end
+
+    def empty
+      assert @set.empty?
+    end
+
+    def test_include
+      @set.add(1, '1')
+
+      assert @set.include?(1)
+      assert_not @set.include?(2)
+    end
+
+    def test_remove
+      @set.add(1, '1')
+      assert @set.include?(1)
+
+      @set.remove(1)
+      assert_not @set.include?(1)
+      assert @set.empty?
+    end
   end
 end

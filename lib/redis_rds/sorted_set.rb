@@ -16,6 +16,10 @@ module RedisRds
       return connection.zrange(@redis_key, 0, -1).to_a
     end
 
+    def empty?
+      return size == 0
+    end
+
     def size
       return connection.zcard(@redis_key)
     end
