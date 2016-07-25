@@ -1,6 +1,6 @@
 # RedisRds
 
-[![GitHub release](https://img.shields.io/badge/release-0.1.0-blue.png)](https://github.com/barcoo/RedisRds/releases/tag/0.1.0)
+[![GitHub release](https://img.shields.io/badge/release-0.1.1-blue.png)](https://github.com/barcoo/redis_rds/releases/tag/0.1.1)
 [![Build Status](https://travis-ci.org/barcoo/redis_rds.svg?branch=master)](https://travis-ci.org/barcoo/redis_rds)
 
 Ruby data structures stored in Redis.
