@@ -4,7 +4,7 @@
     {
       "path": ".",
       "folder_exclude_patterns": ["log", "tmp"],
-      "file_exclude_patterns": [".rubocop-*"]
+      "file_exclude_patterns": [".rubocop-*", "*.md-u", "*~"]
     }
   ],
   "settings":
