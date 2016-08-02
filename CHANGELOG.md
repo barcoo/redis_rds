@@ -1,5 +1,18 @@
 # Changelog
 
+##0.1.2
+
+- [3651e53](https://github.com/barcoo/redis_rds/commit/3651e53) *2016-08-02* __updated rake release task__ (Nicolas Pepin-Perreault)
+- [35bfaeb](https://github.com/barcoo/redis_rds/commit/35bfaeb) *2016-08-02* __ignore .gem files__ (Nicolas Pepin-Perreault)
+- [d317bc8](https://github.com/barcoo/redis_rds/commit/d317bc8) *2016-08-02* __remove COC__ (Nicolas Pepin-Perreault)
+- [d41fb0d](https://github.com/barcoo/redis_rds/commit/d41fb0d) *2016-07-25* __bust github image cache for coveralls badge__ (Sergio Medina)
+- [a2145bc](https://github.com/barcoo/redis_rds/commit/a2145bc) *2016-07-25* __lint Gemfile__ (Sergio Medina)
+- [3873b33](https://github.com/barcoo/redis_rds/commit/3873b33) *2016-07-25* __udpdate ROADMAP__ (Sergio Medina)
+- [d1f9952](https://github.com/barcoo/redis_rds/commit/d1f9952) *2016-07-25* __add coveralls badge to README.md__ (Sergio Medina)
+- [dd1d8a8](https://github.com/barcoo/redis_rds/commit/dd1d8a8) *2016-07-25* __update sublime project file__ (Sergio Medina)
+- [34ba881](https://github.com/barcoo/redis_rds/commit/34ba881) *2016-07-25* __added SortedSet.empty? and improve SortedSet test coverage__ (Sergio Medina)
+- [3ecdc69](https://github.com/barcoo/redis_rds/commit/3ecdc69) *2016-07-25* __try coveralls__ (Sergio Medina)
+
 ##0.1.1
 
 - [6617250](https://github.com/barcoo/redis_rds/commit/6617250) *2016-07-24* __move tests to test/redis_rds__ (Sergio Medina)

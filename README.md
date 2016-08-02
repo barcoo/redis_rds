@@ -1,6 +1,6 @@
 # RedisRds
 
-[![GitHub release](https://img.shields.io/badge/release-0.1.1-blue.png)](https://github.com/barcoo/redis_rds/releases/tag/0.1.1)
+[![GitHub release](https://img.shields.io/badge/release-0.1.2-blue.png)](https://github.com/barcoo/redis_rds/releases/tag/0.1.2)
 [![Build Status](https://travis-ci.org/barcoo/redis_rds.svg?branch=master)](https://travis-ci.org/barcoo/redis_rds)
 [![Coverage Status](https://coveralls.io/repos/github/barcoo/redis_rds/badge.svg?branch=master&update=now)](https://coveralls.io/github/barcoo/redis_rds?branch=master)
 
