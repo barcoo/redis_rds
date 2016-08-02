@@ -16,3 +16,4 @@
 .rubocop-*
 redis_rds.sublime-workspace
 README.md-u
+*.gem
