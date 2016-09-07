@@ -1,5 +1,12 @@
 # Changelog
 
+##0.1.4
+
+- [0752e21](https://github.com/barcoo/redis_rds/commit/0752e21) *2016-09-07* __require counter type__ (Nicolas Pepin-Perreault)
+- [ddbc82c](https://github.com/barcoo/redis_rds/commit/ddbc82c) *2016-09-07* __added temporary counter type__ (Nicolas Pepin-Perreault)
+- [6d993d8](https://github.com/barcoo/redis_rds/commit/6d993d8) *2016-09-07* __version bump__ (Nicolas Pepin-Perreault)
+- [985b54e](https://github.com/barcoo/redis_rds/commit/985b54e) *2016-09-07* __updated String#set to have more options supported by redis__ (Nicolas Pepin-Perreault)
+
 ##0.1.2
 
 - [3651e53](https://github.com/barcoo/redis_rds/commit/3651e53) *2016-08-02* __updated rake release task__ (Nicolas Pepin-Perreault)
