@@ -4,8 +4,19 @@ module RedisRds
       return connection.get(@redis_key)
     end
 
-    def set(value)
-      return connection.set(@redis_key, value)
+    # Lifted from npepine/restruct
+    # @param [Object] value The object to store; note, it will be stored using a string representation
+    # @param [Integer] expiry The expiry time in seconds; if nil, will never expire
+    # @param [Boolean] nx Not Exists: if true, will not set the key if it already existed
+    # @param [Boolean] xx Already Exists: if true, will set the key only if it already existed
+    # @return [Boolean] True if set, false otherwise
+    def set(value, expiry: nil, nx: nil, xx: nil)
+      options = {}
+      options[:ex] = expiry.to_i unless expiry.nil?
+      options[:nx] = nx unless nx.nil?
+      options[:xx] = xx unless xx.nil?
+
+      connection.set(@redis_key, value, options)
     end
 
     def setex(value, expiry)
