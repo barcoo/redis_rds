@@ -29,7 +29,7 @@ gem 'redis_rds', git: 'git@github.com:barcoo/redis_rds.git'
 ## Usage
 
 Best is to check [the tests](test/) to see how to use the data structures.
-Here are two examples, for Mutex and String:
+Here is one example, for String:
 
 ```ruby
 # configure RedisRds by passing either a connection
@@ -41,14 +41,6 @@ RedisRds.configure(
   port: 6379,
   namespace: 'my_app',
 )
-```
-
-```ruby
-my_semaphore = RedisRds::Mutex.new('a_key')
-my_semaphore.synchronize do
-  # do something with a shared resource
-  write_file()
-end # mutex released, another thread can use the resource
 ```
 
 ```ruby

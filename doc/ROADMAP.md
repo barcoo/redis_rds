@@ -8,3 +8,4 @@
 - Improve lib configuration (use Configuration class, allow multiple instances)
 - Use hashes for optional parameters (f.i. see Mutex::initialize)
 - Add support for latest Redis commands (f.i. Geospatial commands)
+- Make Mutex blocking as well as non-blocking
