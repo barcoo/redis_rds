@@ -1,2 +1,2 @@
-inherit_from:
-  - https://raw.githubusercontent.com/barcoo/barcoop/master/rubocop.yml
+inherit_gem:
+  barcoop: conf/rubocop.yml
